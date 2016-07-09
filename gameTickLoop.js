@@ -34,4 +34,3 @@ const gameTickLoop = () => {
 }
 
 export {gameTickLoop as loop};
-// module.exports.loop = gameTickLoop;
