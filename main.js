@@ -1,6 +1,6 @@
-import roleHarvester from "./creepRoles/harvester.js";
-import roleUpgrader from "./creepRoles/upgrader.js";
-import roleBuilder from "./creepRoles/builder.js";
+// import roleHarvester from "./creepRoles/harvester.js";
+// import roleUpgrader from "./creepRoles/upgrader.js";
+// import roleBuilder from "./creepRoles/builder.js";
 
 const gameTickLoopFunc = () => {
   require("bundle.js");
