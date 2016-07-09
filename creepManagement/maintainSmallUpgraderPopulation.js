@@ -13,7 +13,7 @@ const maintainSmallUpgraderPopulation = (populationCap) => {
         if (i !== existingUpgraderIds[j]) newUpgraderId = i;
       }
     }
-    var newUpgrader = Game.spawns.spawn.createCreep([WORK,CARRY,MOVE], ("upgrader" + newUpgraderId), {role: "harvester", id: newUpgraderId});
+    var newUpgrader = Game.spawns.spawn.createCreep([WORK,CARRY,MOVE], ("upgrader" + newUpgraderId), {role: "upgrader", id: newUpgraderId});
     console.log("Spawning new upgrader: " + newUpgrader);
   }
 }
