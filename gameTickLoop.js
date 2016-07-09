@@ -21,18 +21,21 @@ console.log("structures collection:", structs)
 var harvesters = _.filter(Game.creeps, creep => creep.memory.role == 'harvester');
 console.log('Harvesters: ' + harvesters.length);
 
-for (name in harvesters){
-  let i = 0;
-  harvesters[name].memory.id = i;
-  i++;
-}
-
-
-
 if(harvesters.length < 2) {
-
-  var newName = Game.spawns.spawn.createCreep([WORK,CARRY,MOVE], undefined, {role: 'harvester'});
-  console.log('Spawning new harvester: ' + newName);
+  const existingHarvIds = []
+  for (let i = 0; i < harvesters.length; i++){
+    existingHarvIds.push(harvesters[0].memory.id)
+  }
+  let newHarvId = null;
+  for (let i = 0; i < harvesters.length; i++){
+    for (let j = 0; j < existingHarvIds.length; j++){
+      if (i !== existingHarvIds[j]) {
+        newHarvId = i;
+      }
+    }
+  }
+  var newHarvester = Game.spawns.spawn.createCreep([WORK,CARRY,MOVE], ("harvester" + newHarvId), {role: "harvester", id: "newHarvId"});
+  console.log("Spawning new harvester: " + newHarvester);
 }
 
 var tower = Game.getObjectById(null);
