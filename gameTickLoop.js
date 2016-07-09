@@ -7,8 +7,8 @@ const gameTickLoop = () => {
 
   const structs = Game.structures;
 
-  for (struct in structs){
-    console.log(struct)
+  for (let i = 0; i < structs.length; i++){
+    console.log(structs[i])
   }
 
   var tower = Game.getObjectById(null);
