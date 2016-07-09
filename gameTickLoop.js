@@ -4,6 +4,13 @@ import roleBuilder from "./creepRoles/builder.js";
 
 const gameTickLoop = () => {
   console.log("TICK in bundle from gameTickLoop.js");
+
+  const structs = Game.structures;
+
+  for (struct in structs){
+    console.log(struct)
+  }
+
   var tower = Game.getObjectById(null);
   if(tower) {
     var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
