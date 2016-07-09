@@ -47,6 +47,11 @@ module.exports =
 
 	"use strict";
 	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.loop = undefined;
+	
 	var _harvester = __webpack_require__(1);
 	
 	var _harvester2 = _interopRequireDefault(_harvester);
@@ -94,8 +99,8 @@ module.exports =
 	  }
 	};
 	
-	// export {gameTickLoop as loop};
-	module.exports.loop = gameTickLoop;
+	exports.loop = gameTickLoop;
+	// module.exports.loop = gameTickLoop;
 
 /***/ },
 /* 1 */
