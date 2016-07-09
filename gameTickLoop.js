@@ -16,16 +16,21 @@ for(var name in Memory.creeps) {
 console.log("TICK in bundle from gameTickLoop.js");
 
 const structs = Game.structures;
-console.log("structures collection:",structs)
+console.log("structures collection:", structs)
 
-for (let i = 0; i < structs.length; i++){
-  console.log("struct #"+i,structs[i])
-}
-
-var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
+var harvesters = _.filter(Game.creeps, creep => creep.memory.role == 'harvester');
 console.log('Harvesters: ' + harvesters.length);
 
+for (name in harvesters){
+  let i = 0;
+  name.memory.id = i;
+  i++;
+}
+
+
+
 if(harvesters.length < 2) {
+
   var newName = Game.spawns.spawn.createCreep([WORK,CARRY,MOVE], undefined, {role: 'harvester'});
   console.log('Spawning new harvester: ' + newName);
 }
@@ -45,8 +50,8 @@ if(tower) {
   }
 }
 
-for(var name in Game.creeps) {
-  var creep = Game.creeps[name];
+for (let creepNameKey in Game.creeps) {
+  let creep = Game.creeps[creepNameKey];
   if(creep.memory.role == 'harvester') {
     roleHarvester.run(creep);
   }
