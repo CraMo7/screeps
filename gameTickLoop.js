@@ -20,6 +20,7 @@ const gameTickLoop = () => {
   }
 
   const controllerProps = Object.keys(structs[0]);
+  console.log("ctrlr props: "+ controllerProps)
   for (let i = 0; i < controllerProps.length; i++){
     console.log("controller key #"+i+controllerProps[i])
   }
