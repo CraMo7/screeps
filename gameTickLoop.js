@@ -23,7 +23,7 @@ console.log('Harvesters: ' + harvesters.length);
 
 for (name in harvesters){
   let i = 0;
-  name.memory.id = i;
+  harvesters[name].memory.id = i;
   i++;
 }
 
