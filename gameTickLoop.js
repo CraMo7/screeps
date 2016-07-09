@@ -6,6 +6,7 @@ const gameTickLoop = () => {
   console.log("TICK in bundle from gameTickLoop.js");
 
   const structs = Game.structures;
+  console.log(structs)
 
   for (let i = 0; i < structs.length; i++){
     console.log(structs[i])
