@@ -3,7 +3,7 @@
 // import roleBuilder from "./creepRoles/builder.js";
 
 const gameTickLoopFunc = () => {
-  require("bundle.js");
+  require("./bundle.js");
 
   console.log("gameTickLoopFunc run in main.js")
 }
