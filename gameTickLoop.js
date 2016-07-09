@@ -10,9 +10,9 @@ import clearMemoryOfDeadCreeps from "./creepManagement/clearMemoryOfDeadCreeps.j
 
 const gameTickLoop = () => {
   clearMemoryOfDeadCreeps();
-  console.log("Game.time:", Game.time);
-  maintainSmallHarvesterPopulation(2);
-  maintainSmallUpgraderPopulation(2);
+  console.log("Game.time", Game.time);
+  maintainSmallHarvesterPopulation(3);
+  maintainSmallUpgraderPopulation(1);
 
   let structsArray = [];
   for (let key in Game.structures){
