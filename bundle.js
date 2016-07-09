@@ -1,3 +1,206 @@
-!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){"use strict";!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l);o(4);var c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),
-r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o},function(r,e){!function(r){function e(n){if(o[n])return o[n].exports;var t=o[n]={exports:{},id:n,loaded:!1};return r[n].call(t.exports,t,t.exports,e),t.loaded=!0,t.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){function n(r){return r&&r.__esModule?r:{"default":r}}var t=o(2),a=n(t),u=o(3),i=n(u),l=o(1),m=n(l),c=function(){console.log("TICK in bundle from gameTickLoop.js");var r=Game.getObjectById(null);if(r){var e=r.pos.findClosestByRange(FIND_STRUCTURES,{filter:function(r){return r.hits<r.hitsMax}});e&&r.repair(e);var o=r.pos.findClosestByRange(FIND_HOSTILE_CREEPS);o&&r.attack(o)}for(var n in Game.creeps){var t=Game.creeps[n];"harvester"==t.memory.role&&a["default"].run(t),"upgrader"==t.memory.role&&i["default"].run(t),"builder"==t.memory.role&&m["default"].run(t)}};r.exports.loop=c},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.building&&0==r.carry.energy&&(r.memory.building=!1),r.memory.building||r.carry.energy!=r.carryCapacity||(r.memory.building=!0),r.memory.building){var e=r.room.find(FIND_CONSTRUCTION_SITES);e.length&&r.build(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_SOURCES);r.harvest(o[0])==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.carry.energy<r.carryCapacity){var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}else{var o=r.room.find(FIND_STRUCTURES,{filter:function(r){return(r.structureType==STRUCTURE_EXTENSION||r.structureType==STRUCTURE_SPAWN||r.structureType==STRUCTURE_TOWER)&&r.energy<r.energyCapacity}});o.length>0&&r.transfer(o[0],RESOURCE_ENERGY)==ERR_NOT_IN_RANGE&&r.moveTo(o[0])}}};e["default"]=o},function(r,e){Object.defineProperty(e,"__esModule",{value:!0});var o={run:function(r){if(r.memory.upgrading&&0==r.carry.energy&&(r.memory.upgrading=!1),r.memory.upgrading||r.carry.energy!=r.carryCapacity||(r.memory.upgrading=!0),r.memory.upgrading)r.upgradeController(r.room.controller)==ERR_NOT_IN_RANGE&&r.moveTo(r.room.controller);else{var e=r.room.find(FIND_SOURCES);r.harvest(e[0])==ERR_NOT_IN_RANGE&&r.moveTo(e[0])}}};e["default"]=o}])}])}])}])}])}])}])}])}])}])}])}])}])}])}])}]);
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var _harvester = __webpack_require__(1);
+	
+	var _harvester2 = _interopRequireDefault(_harvester);
+	
+	var _upgrader = __webpack_require__(2);
+	
+	var _upgrader2 = _interopRequireDefault(_upgrader);
+	
+	var _builder = __webpack_require__(3);
+	
+	var _builder2 = _interopRequireDefault(_builder);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var loop = function loop() {
+	  console.log("TICK in bundle from gameTickLoop.js");
+	  var tower = Game.getObjectById(null);
+	  if (tower) {
+	    var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
+	      filter: function filter(structure) {
+	        return structure.hits < structure.hitsMax;
+	      }
+	    });
+	    if (closestDamagedStructure) {
+	      tower.repair(closestDamagedStructure);
+	    }
+	
+	    var closestHostile = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
+	    if (closestHostile) {
+	      tower.attack(closestHostile);
+	    }
+	  }
+	
+	  for (var name in Game.creeps) {
+	    var creep = Game.creeps[name];
+	    if (creep.memory.role == 'harvester') {
+	      _harvester2.default.run(creep);
+	    }
+	    if (creep.memory.role == 'upgrader') {
+	      _upgrader2.default.run(creep);
+	    }
+	    if (creep.memory.role == 'builder') {
+	      _builder2.default.run(creep);
+	    }
+	  }
+	};
+	
+	// export {loop as loop};
+	module.exports.loop = loop;
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var roleHarvester = {
+	  /** @param {Creep} creep **/
+	  run: function run(creep) {
+	    if (creep.carry.energy < creep.carryCapacity) {
+	      var sources = creep.room.find(FIND_SOURCES);
+	      if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
+	        creep.moveTo(sources[0]);
+	      }
+	    } else {
+	      var targets = creep.room.find(FIND_STRUCTURES, {
+	        filter: function filter(structure) {
+	          return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN || structure.structureType == STRUCTURE_TOWER) && structure.energy < structure.energyCapacity;
+	        }
+	      });
+	      if (targets.length > 0) {
+	        if (creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+	          creep.moveTo(targets[0]);
+	        }
+	      }
+	    }
+	  }
+	};
+	
+	exports.default = roleHarvester;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var roleUpgrader = {
+	  /** @param {Creep} creep **/
+	  run: function run(creep) {
+	    if (creep.memory.upgrading && creep.carry.energy == 0) {
+	      creep.memory.upgrading = false;
+	    }
+	    if (!creep.memory.upgrading && creep.carry.energy == creep.carryCapacity) {
+	      creep.memory.upgrading = true;
+	    }
+	
+	    if (creep.memory.upgrading) {
+	      if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+	        creep.moveTo(creep.room.controller);
+	      }
+	    } else {
+	      var sources = creep.room.find(FIND_SOURCES);
+	      if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
+	        creep.moveTo(sources[0]);
+	      }
+	    }
+	  }
+	};
+	
+	exports.default = roleUpgrader;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var builderRole = {
+	  /** @param {Creep} creep **/
+	  run: function run(creep) {
+	    if (creep.memory.building && creep.carry.energy == 0) {
+	      creep.memory.building = false;
+	    }
+	    if (!creep.memory.building && creep.carry.energy == creep.carryCapacity) {
+	      creep.memory.building = true;
+	    }
+	    if (creep.memory.building) {
+	      var targets = creep.room.find(FIND_CONSTRUCTION_SITES);
+	      if (targets.length) {
+	        if (creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
+	          creep.moveTo(targets[0]);
+	        }
+	      }
+	    } else {
+	      var sources = creep.room.find(FIND_SOURCES);
+	      if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
+	        creep.moveTo(sources[0]);
+	      }
+	    }
+	  }
+	};
+	
+	exports.default = builderRole;
+
+/***/ }
+/******/ ]);
 //# sourceMappingURL=bundle.js.map

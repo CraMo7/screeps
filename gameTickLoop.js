@@ -1,9 +1,8 @@
-require("./bundle.js");
 import roleHarvester from "./creepRoles/harvester.js";
 import roleUpgrader from "./creepRoles/upgrader.js";
 import roleBuilder from "./creepRoles/builder.js";
 
-const gameTickLoopFunc = () => {
+const loop = () => {
   console.log("TICK in bundle from gameTickLoop.js");
   var tower = Game.getObjectById(null);
   if(tower) {
@@ -34,5 +33,5 @@ const gameTickLoopFunc = () => {
   }
 }
 
-// export {gameTickLoopFunc as loop};
-module.exports.loop = gameTickLoopFunc;
+// export {loop as loop};
+module.exports.loop = loop;
