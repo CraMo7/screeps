@@ -6,10 +6,10 @@ const gameTickLoop = () => {
   console.log("TICK in bundle from gameTickLoop.js");
 
   const structs = Game.structures;
-  console.log(structs)
+  console.log("structures collection:",structs)
 
   for (let i = 0; i < structs.length; i++){
-    console.log(structs[i])
+    console.log("struct #"+i,structs[i])
   }
 
   var tower = Game.getObjectById(null);
