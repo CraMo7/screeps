@@ -20,6 +20,8 @@ const gameTickLoop = () => {
     structsArray.push(structs[key]);
   }
 
+  console.log("_MY MY MY ", structsArray[0]._my)
+
   const controllerProps = Object.keys(structsArray[0]);
   console.log("ctrlr props: "+ controllerProps)
   for (let i = 0; i < controllerProps.length; i++){
