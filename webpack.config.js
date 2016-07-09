@@ -2,9 +2,9 @@ config = {
   entry: "./gameTickLoop.js",
   output: {
     filename: "main.js",
-    path: "./",
+    path: "./"
     // library: "loop",
-    libraryTarget: "commonjs2"
+    // libraryTarget: "commonjs2"
   },
   devtool: 'source-map',
   resolve: {
