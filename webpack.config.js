@@ -1,7 +1,7 @@
 config = {
   entry: "./gameTickLoop.js",
   output: {
-    filename: "main.js",
+    filename: "bundle.js",
     path: "./"
   },
   devtool: 'source-map',
