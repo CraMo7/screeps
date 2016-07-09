@@ -7,6 +7,7 @@ const maintainSmallHarvesterPopulation = (populationCap) => {
     for (let i = 0; i < harvesters.length; i++){
       existingHarvIds.push(harvesters[i].memory.id)
     }
+    console.log(existingHarvIds)
     let newHarvId = 0;
     for (let i = 0; i < (harvesters.length || 1); i++){
       for (let j = 0; j < existingHarvIds.length; j++){
@@ -15,6 +16,7 @@ const maintainSmallHarvesterPopulation = (populationCap) => {
         }
       }
     }
+    console.log(newHarvId)
     var newHarvester = Game.spawns.spawn.createCreep([WORK,CARRY,MOVE], ("harvester" + newHarvId), {role: "harvester", id: newHarvId});
     console.log("Spawning new harvester: " + newHarvester);
   }

@@ -14,7 +14,7 @@ const gameTickLoop = () => {
   maintainSmallHarvesterPopulation(2);
   maintainSmallUpgraderPopulation(2);
 
-  Memory.controllerDowngradeIn--;
+  delete Memory.controllerDowngradeIn;
 
   const structs = Game.structures;
   let i = 0;
