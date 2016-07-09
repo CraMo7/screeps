@@ -3,7 +3,7 @@ config = {
   output: {
     filename: "main.js",
     path: "./",
-    library: "loop",
+    // library: "loop",
     libraryTarget: "commonjs2"
   },
   devtool: 'source-map',
