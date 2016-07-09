@@ -9,7 +9,7 @@ const maintainSmallHarvesterPopulation = (populationCap) => {
     }
     console.log("existingids", existingHarvIds)
     let newHarvId = 0;
-    for (let i = 0; i < (harvesters.length || 1); i++){
+    for (let i = 0; i < populationCap; i++){
       for (let j = 0; j < existingHarvIds.length; j++){
         console.log("looping", i)
         if (i !== existingHarvIds[j]) {

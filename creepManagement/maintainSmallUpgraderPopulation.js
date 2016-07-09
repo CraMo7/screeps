@@ -8,7 +8,7 @@ const maintainSmallUpgraderPopulation = (populationCap) => {
       existingUpgraderIds.push(upgraders[i].memory.id)
     }
     let newUpgraderId = 0;
-    for (let i = 0; i < (upgraders.length || 1); i++){
+    for (let i = 0; i < populationCap; i++){
       for (let j = 0; j < existingUpgraderIds.length; j++){
         if (i !== existingUpgraderIds[j]) newUpgraderId = i;
       }

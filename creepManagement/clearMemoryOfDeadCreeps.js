@@ -1,9 +1,8 @@
 export default () => {
-  for(var name in Memory.creeps) {
-    console.log("creep in memory:", name)
-    if(!Game.creeps[name]) {
-      delete Memory.creeps[name];
-      console.log('Clearing non-existing creep memory:', name);
+  for (let key in Memory.creeps){
+    if (!Game.creeps[key]){
+      delete Memory.creeps[key];
+      console.log('Clearing non-existing creep memory:', key);
     }
   }
 }
