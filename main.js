@@ -61,7 +61,7 @@ module.exports =
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var loop = function loop() {
+	var gameTickLoop = function gameTickLoop() {
 	  console.log("TICK in bundle from gameTickLoop.js");
 	  var tower = Game.getObjectById(null);
 	  if (tower) {
@@ -94,8 +94,8 @@ module.exports =
 	  }
 	};
 	
-	// export {loop as loop};
-	module.exports.loop = loop;
+	// export {gameTickLoop as loop};
+	module.exports.loop = gameTickLoop;
 
 /***/ },
 /* 1 */
