@@ -1,24 +1,21 @@
 const maintainSmallHarvesterPopulation = (populationCap) => {
-  var harvesters = _.filter(Game.creeps, creep => creep.memory.role == 'harvester');
-  // console.log('Harvesters: ' + harvesters.length);
+  const harvesters = _.filter(Game.creeps, creep => creep.memory.role == 'harvester');
 
-  if(harvesters.length < populationCap || !harvesters) {
-    const existingHarvIds = []
+  if (harvesters.length < populationCap || !harvesters){
+    const existingHarvesterIds = []
     for (let i = 0; i < harvesters.length; i++){
-      existingHarvIds.push(harvesters[i].memory.id)
+      existingHarvesterIds.push(harvesters[i].memory.id)
     }
-    console.log("existingids", existingHarvIds)
-    let newHarvId = 0;
+    let newHarvesterId = null;
     for (let i = 0; i < populationCap; i++){
-      for (let j = 0; j < existingHarvIds.length; j++){
+      for (let j = 0; j < existingHarvesterIds.length; j++){
         console.log("looping", i)
-        if (i !== existingHarvIds[j]) {
-          newHarvId = i;
+        if (i !== existingHarvesterIds[j]) {
+          newHarvesterId = i;
         }
       }
     }
-    console.log("newid",newHarvId)
-    var newHarvester = Game.spawns.spawn.createCreep([WORK,CARRY,MOVE], ("harvester" + newHarvId), {role: "harvester", id: newHarvId});
+    var newHarvester = Game.spawns.spawn.createCreep([WORK,CARRY,MOVE], ("harvester" + newHarvesterId), {role: "harvester", id: newHarvesterId});
     console.log("Spawning new harvester: " + newHarvester);
   }
 }
