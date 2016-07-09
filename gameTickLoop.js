@@ -2,37 +2,22 @@ import roleHarvester from "./creepRoles/harvester.js";
 import roleUpgrader from "./creepRoles/upgrader.js";
 import roleBuilder from "./creepRoles/builder.js";
 
+import maintainSmallHarvesterPopulation from "./creepManagement/maintainSmallHarvesterPopulation.js";
 import clearMemoryOfDeadCreeps from "./creepManagement/clearMemoryOfDeadCreeps.js";
 
 
 const gameTickLoop = () => {
-
   clearMemoryOfDeadCreeps();
-
   console.log("Game.time:", Game.time);
+  maintainSmallHarvesterPopulation();
 
   const structs = Game.structures;
+  let i = 0;
+  for (key in structs){
+    console.log("structure #"+i++, structs[key]);
+  }
   console.log("structures collection:", structs)
 
-  var harvesters = _.filter(Game.creeps, creep => creep.memory.role == 'harvester');
-  console.log('Harvesters: ' + harvesters.length);
-
-  if(harvesters.length < 2) {
-    const existingHarvIds = []
-    for (let i = 0; i < harvesters.length; i++){
-      existingHarvIds.push(harvesters[0].memory.id)
-    }
-    let newHarvId = null;
-    for (let i = 0; i < harvesters.length; i++){
-      for (let j = 0; j < existingHarvIds.length; j++){
-        if (i !== existingHarvIds[j]) {
-          newHarvId = i;
-        }
-      }
-    }
-    var newHarvester = Game.spawns.spawn.createCreep([WORK,CARRY,MOVE], ("harvester" + newHarvId), {role: "harvester", id: newHarvId});
-    console.log("Spawning new harvester: " + newHarvester);
-  }
 
   var tower = Game.getObjectById(null);
   if(tower) {
