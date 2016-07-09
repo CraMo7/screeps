@@ -1,6 +1,6 @@
 const maintainSmallUpgraderPopulation = (populationCap) => {
   var upgraders = _.filter(Game.creeps, creep => creep.memory.role == 'upgrader');
-  console.log('upgraders: ' + upgraders.length);
+  // console.log('upgraders: ' + upgraders.length);
 
   if(upgraders.length < populationCap || !upgraders) {
     const existingUpgraderIds = []

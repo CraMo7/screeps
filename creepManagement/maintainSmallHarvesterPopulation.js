@@ -1,6 +1,6 @@
 const maintainSmallHarvesterPopulation = (populationCap) => {
   var harvesters = _.filter(Game.creeps, creep => creep.memory.role == 'harvester');
-  console.log('Harvesters: ' + harvesters.length);
+  // console.log('Harvesters: ' + harvesters.length);
 
   if(harvesters.length < populationCap || !harvesters) {
     const existingHarvIds = []
@@ -11,6 +11,7 @@ const maintainSmallHarvesterPopulation = (populationCap) => {
     let newHarvId = 0;
     for (let i = 0; i < (harvesters.length || 1); i++){
       for (let j = 0; j < existingHarvIds.length; j++){
+        console.log("looping", i)
         if (i !== existingHarvIds[j]) {
           newHarvId = i;
         }

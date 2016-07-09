@@ -14,15 +14,9 @@ const gameTickLoop = () => {
   maintainSmallHarvesterPopulation(2);
   maintainSmallUpgraderPopulation(2);
 
-  delete Memory.controllerDowngradeIn;
-
-  const structs = Game.structures;
-  let i = 0;
   let structsArray = [];
-  for (let key in structs){
-    console.log("structure #"+i++, structs[key]);
-    console.log("struct key", key);
-    structsArray.push(structs[key]);
+  for (let key in Game.structures){
+    structsArray.push(Game.structures[key]);
   }
 
 
