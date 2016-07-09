@@ -13,13 +13,14 @@ const gameTickLoop = () => {
 
   const structs = Game.structures;
   let i = 0;
+  let structsArray = [];
   for (let key in structs){
     console.log("structure #"+i++, structs[key]);
     console.log("struct key", key);
-
+    structsArray.push(structs[key]);
   }
 
-  const controllerProps = Object.keys(structs[0]);
+  const controllerProps = Object.keys(structsArray[0]);
   console.log("ctrlr props: "+ controllerProps)
   for (let i = 0; i < controllerProps.length; i++){
     console.log("controller key #"+i+controllerProps[i])
