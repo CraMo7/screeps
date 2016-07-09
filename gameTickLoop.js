@@ -34,7 +34,7 @@ if(harvesters.length < 2) {
       }
     }
   }
-  var newHarvester = Game.spawns.spawn.createCreep([WORK,CARRY,MOVE], ("harvester" + newHarvId), {role: "harvester", id: "newHarvId"});
+  var newHarvester = Game.spawns.spawn.createCreep([WORK,CARRY,MOVE], ("harvester" + newHarvId), {role: "harvester", id: newHarvId});
   console.log("Spawning new harvester: " + newHarvester);
 }
 
