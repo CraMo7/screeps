@@ -20,7 +20,7 @@ const gameTickLoop = () => {
     structsArray.push(structs[key]);
   }
 
-  Memory.controllerDowngradeIn = 10000;
+  Memory.controllerDowngradeIn--;
 
   console.log("_MY MY MY ", structsArray[0]._my)
 
